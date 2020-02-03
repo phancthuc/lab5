@@ -3,6 +3,12 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".friendName").click(function(e) {
+ 		e.preventDefault();
+ 		var anagram = anagrammedName($(this).text());
+ 		$(this).text(anagram);
+ 		console.log("clicked");
+ 	});
 })
 
 /*
@@ -14,10 +20,10 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
+
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
-	} 
+	}
 	else if (name == "Ivan Sutherland") {
 		return "Vandal Heist Run";
 	}
